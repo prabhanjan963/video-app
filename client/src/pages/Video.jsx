@@ -78,7 +78,7 @@ const handleTimeUpdate = async () => {
           </div>
           <video ref={videoRef}
               onTimeUpdate={handleTimeUpdate}
-          src={`http://localhost:8000/uploades/${photo.videoUrl}`} type="video/*"
+          src={`http://localhost:8000/backend/uploades/${photo.videoUrl}`} type="video/*"
             className='md:w-full md:h-[550px] h-64 w-full bg-gray-800 cursor-pointer'
             controls
           >

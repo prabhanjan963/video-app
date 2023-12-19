@@ -8,21 +8,23 @@ export default function Card() {
 
   useEffect(() => {
     const response = async () => {
-      const res = await axios.get(`/api/v1/video`)
+      const res = await axios.get(`http://localhost:8000/api/v1/video`)
       setPhotos(res.data)
+      
     }
     response()
   },[])
   //all vide api
-  
+  console.log("hello " + photos)
   return (
     <>
       
       {
-        photos.map(({title,desc,videoUrl,_id,createdAt,views},index) => (
+        
+        photos.map(({title,desc,videoUrl,_id,createdAt,views}) => (
           <Link to={`/v1/video/${_id}`} key={_id}>
-        <div className="flex flex-col md:w-96 text-white md:p-5 h-80 cursor-pointer md:mb-10 -mb-6 w-full" 
-         >
+            
+        <div className="flex flex-col md:w-96 text-white md:p-5 h-80 cursor-pointer md:mb-10 -mb-6 w-full">
         <iframe src={`http://localhost:8000/uploades/${videoUrl}`} alt="video/" 
         className="md:w-96 bg-slate-400 md:h-52 h-80 bg-contain w-full">
             
