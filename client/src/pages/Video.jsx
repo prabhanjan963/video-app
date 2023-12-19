@@ -21,7 +21,7 @@ export default function Video() {
   //one api
   useEffect(() => {
     const res = async () => {
-      const response = await axios.get(`/api/v1/video/find/${id}`)
+      const response = await axios.get(`http://localhost:8000/api/v1/video/find/${id}`)
       setPhoto(response.data)
       dispatch(fetchSuccess(response.data))
     }
