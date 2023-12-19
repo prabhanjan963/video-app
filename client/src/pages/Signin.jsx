@@ -25,7 +25,7 @@ export default function Signin() {
     e.preventDefault(); 
     dispatch(loginStart())
     try {
-      const {data} = await axios.post('/api/v1/auth/signin', user)
+      const {data} = await axios.post('http://localhost:8000/api/v1/auth/signin', user)
       if (data.error) {
         toast.error("Wrong Credential!",data.error)
       } else {
