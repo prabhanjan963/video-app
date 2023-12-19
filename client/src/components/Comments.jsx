@@ -11,7 +11,7 @@ const [comments,setComments] = useState([])
 useEffect(() => {
    const fetchComments = async () => {
       try {
-          const res = await axios.get(`/api/v1/comment/${videoId}`)
+          const res = await axios.get(`http://localhost:8000/api/v1/comment/${videoId}`)
           setComments(res.data)
       } catch (error) {
           

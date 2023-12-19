@@ -16,7 +16,7 @@ const [comments,setComments] = useState([])
 
   const sendComment = async (e) => {
     try {
-        await axios.post(`/api/v1/comment`,comment)
+        await axios.post(`http://localhost:8000/api/v1/comment`,comment)
         
     } catch (error) {
         
@@ -27,7 +27,7 @@ const [comments,setComments] = useState([])
 useEffect(() => {
   const fetchComments = async () => {
      try {
-         const res = await axios.get(`/api/comment/${videoId}`)
+         const res = await axios.get(`http://localhost:8000/api/comment/${videoId}`)
          setComments(res.data)
      } catch (error) {
          

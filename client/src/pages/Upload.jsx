@@ -28,7 +28,7 @@ export default function Upload() {
       })
 
     try {
-      axios.post(`/api/v1/video/upload`,formData ,{
+      axios.post(`http://localhost:8000/api/v1/video/upload`,formData ,{
         onUploadProgress: (progressEvent) => {
           setProgress(prevState => {
             return {...prevState, pc: progressEvent.progress * 100}

@@ -30,10 +30,9 @@ export default function Video() {
 
   const handleLike = async () => {
     try {
-      const { data } = await axios.put(`/api/v1/user/like/${currentVideo._id}`)
+      const { data } = await axios.put(`http://localhost:8000/api/v1/user/like/${currentVideo._id}`)
       dispatch(like(currentUser._id))
       if (data.error) {
-        console.log('like false')
       } else {
         dispatch(like(currentUser._id))
       }
@@ -45,7 +44,7 @@ export default function Video() {
   }
 
   const handledisLike = async () => {
-    await axios.put(`/api/v1/user/dislike/${currentVideo._id}`)
+    await axios.put(`http://localhost:8000/api/v1/user/dislike/${currentVideo._id}`)
     dispatch(dislike(currentUser._id))
   }
 
@@ -59,7 +58,7 @@ const handleTimeUpdate = async () => {
   const percentageWatched = (currentTime/duration) * 100;
 
   if(percentageWatched >= 30 && percentageWatched < 31){
-    const updateView = await axios.put(`/api/v1/video/view/${currentVideo._id}`)
+    const updateView = await axios.put(`http://localhost:8000/api/v1/video/view/${currentVideo._id}`)
   }
 }
 
