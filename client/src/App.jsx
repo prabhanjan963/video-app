@@ -22,7 +22,7 @@ export default function App() {
         <Route path='/signup' element={<Signup/>}/>
         <Route path='/card' element={<Card/>}/>
         <Route path='/upload' element={<Upload/>}/>
-        <Route path='/v1/video/:id' element={<Video/>}/>
+        <Route path='/video/:id' element={<Video/>}/>
         <Route path='/like' element={<Like/>}/>
       </Routes>
     </>
